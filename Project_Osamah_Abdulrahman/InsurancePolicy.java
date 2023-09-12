@@ -1,4 +1,4 @@
-class InsurancePolicy {
+public class InsurancePolicy {
 
     public static double POLICY_FEE = 600.00;
     
@@ -115,6 +115,6 @@ class InsurancePolicy {
             price += (bmi - 35) * 20;
         }
 
-        return Policy.POLICY_FEE + price;
+        return InsurancePolicy.POLICY_FEE + price;
     }
 }
