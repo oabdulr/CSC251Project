@@ -23,7 +23,7 @@ class main {
         int height = sc.nextInt();
         int weight = sc.nextInt();
 
-        if (this.get_isHolderSmoker()){
+        if (isSmoker){
           totalSmoker++;
         }
 
@@ -31,7 +31,7 @@ class main {
         Policy newPolicyHolder = new Policy(policyNum, providerName, holderPolicy);
         InsurancePolices.add(newPolicyHolder);
 
-        newPolicyHolder.toString();
+        System.out.println(newPolicyHolder.toString());
       }
 
 

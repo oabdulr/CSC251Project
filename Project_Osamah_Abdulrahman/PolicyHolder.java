@@ -76,4 +76,24 @@ public class PolicyHolder {
     public double CalculateBMI(){
         return (this.weightLb * 703) / (this.heightIn * this.heightIn);
     }
+
+    public String toString(){
+        String returnString = "";
+
+        returnString = returnString + "Policyholder's First Name: " + this.get_firstName() + "\n";
+        returnString = returnString + "Policyholder's Last Name: " + this.get_lastName() + "\n";
+        returnString = returnString + "Policyholder's Age: " + this.get_age() + "\n";
+
+        if (this.get_isSmoker()){
+          returnString = returnString + "Policyholder's Smoking Status: smoker" + "\n";
+        }
+        else{
+          returnString = returnString + "Policyholder's Smoking Status: non-smoker" + "\n";
+        }
+        
+        returnString = returnString + "Policyholder's Height: " + this.get_weightLb() + "\n";
+        returnString = returnString + "Policyholder's Weight: " + this.get_weightLb() + "\n";
+
+        return returnString;
+    }
 }

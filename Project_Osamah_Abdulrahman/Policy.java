@@ -107,6 +107,11 @@ public class Policy {
 
         returnString = returnString + "Policy Number: " + this.get_policyNumber() + "\n";
         returnString = returnString +"Provider Name: " + this.get_providersName() + "\n";
+
+        returnString = returnString + this.policyHolder.toString();
+
+        returnString = String.format(returnString + "Policyholder's BMI: %.2f\n", this.get_policeHolder().CalculateBMI());  
+        returnString = String.format(returnString + "Policy Price: $%,.2f\n", this.PolicyPrice());
         
         return returnString;
     }
