@@ -101,4 +101,13 @@ public class Policy {
 
         return Policy.POLICY_FEE + price;
     }
+
+    public String toString(){
+        String returnString = "";
+
+        returnString = returnString + "Policy Number: " + this.get_policyNumber() + "\n";
+        returnString = returnString +"Provider Name: " + this.get_providersName() + "\n";
+        
+        return returnString;
+    }
 }

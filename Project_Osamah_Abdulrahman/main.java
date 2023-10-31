@@ -23,31 +23,15 @@ class main {
         int height = sc.nextInt();
         int weight = sc.nextInt();
 
-        
+        if (this.get_isHolderSmoker()){
+          totalSmoker++;
+        }
 
         PolicyHolder holderPolicy = new PolicyHolder(firstName, lastName, age, isSmoker, height, weight); 
         Policy newPolicyHolder = new Policy(policyNum, providerName, holderPolicy);
         InsurancePolices.add(newPolicyHolder);
 
-        System.out.println("Policy Number: " + newPolicyHolder.get_policyNumber());
-        System.out.println("Provider Name: " + newPolicyHolder.get_providersName());
-        System.out.println("Policyholder's First Name: " + newPolicyHolder.get_holderFirstName());
-        System.out.println("Policyholder's Last Name: " + newPolicyHolder.get_holderLastName());
-        System.out.println("Policyholder's Age: " + newPolicyHolder.get_holdersAge());
-        if (newPolicyHolder.get_isHolderSmoker()){
-          System.out.println("Policyholder's Smoking Status: smoker");
-          totalSmoker++;
-        }
-        else{
-          System.out.println("Policyholder's Smoking Status: non-smoker");
-        }
-        
-        System.out.println("Policyholder's Height: " + newPolicyHolder.get_holderHeightIn());
-        System.out.println("Policyholder's Weight: " + newPolicyHolder.get_holderWeightLb());
-        System.out.printf("Policyholder's BMI: %.2f\n", newPolicyHolder.get_policeHolder().CalculateBMI());  
-        System.out.printf("Policy Price: $%,.2f\n", newPolicyHolder.PolicyPrice());  
-        System.out.println();
-       
+        newPolicyHolder.toString();
       }
 
 
