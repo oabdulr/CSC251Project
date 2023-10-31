@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 class main {
-  public static ArrayList<InsurancePolicy> InsurancePolices = new ArrayList<InsurancePolicy>();
+  public static ArrayList<Policy> InsurancePolices = new ArrayList<Policy>();
 
   public static void main(String[] args) throws FileNotFoundException {
       File file = new File("PolicyInformation.txt");
@@ -22,7 +22,11 @@ class main {
         boolean isSmoker = sc.nextLine().equalsIgnoreCase("smoker");
         int height = sc.nextInt();
         int weight = sc.nextInt();
-        InsurancePolicy newPolicyHolder = new InsurancePolicy(policyNum, providerName, firstName, lastName, age, isSmoker, height, weight);
+
+        
+
+        PolicyHolder holderPolicy = new PolicyHolder(firstName, lastName, age, isSmoker, height, weight); 
+        Policy newPolicyHolder = new Policy(policyNum, providerName, holderPolicy);
         InsurancePolices.add(newPolicyHolder);
 
         System.out.println("Policy Number: " + newPolicyHolder.get_policyNumber());
@@ -40,13 +44,14 @@ class main {
         
         System.out.println("Policyholder's Height: " + newPolicyHolder.get_holderHeightIn());
         System.out.println("Policyholder's Weight: " + newPolicyHolder.get_holderWeightLb());
-        System.out.printf("Policyholder's BMI: %.2f\n", newPolicyHolder.CalculateBMI());  
+        System.out.printf("Policyholder's BMI: %.2f\n", newPolicyHolder.get_policeHolder().CalculateBMI());  
         System.out.printf("Policy Price: $%,.2f\n", newPolicyHolder.PolicyPrice());  
         System.out.println();
        
       }
 
 
+      System.out.println("There were " + InsurancePolices.size() + " Policy objects created.");
       System.out.println("The number of policies with a smoker is: " + totalSmoker);
       System.out.println("The number of policies with a non-smoker is: " + (InsurancePolices.size() - totalSmoker));
       
